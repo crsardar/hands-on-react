@@ -5,19 +5,21 @@ const Dropdown = ({ title, options, selected, onOptionChange }) => {
   const refDropdown = useRef();
 
   useEffect(() => {
-    console.log("Inside useEffect");
     const onBodyClick = (event) => {
-      console.log("Adding listener = " + refDropdown);
-      if (!refDropdown.current.contains(event.target)) {
+      console.log(refDropdown);
+      if (
+        refDropdown &&
+        refDropdown.current &&
+        !refDropdown.current.contains(event.target)
+      ) {
         setExpanded(false);
       }
     };
-    console.log("Inside useEffect : 2");
+
     document.body.addEventListener("click", onBodyClick);
 
     return () => {
       document.body.removeEventListener("click", onBodyClick);
-      console.log("Removed is called");
     };
   }, []);
 
