@@ -1,0 +1,14 @@
+{
+  "name": "com.crsardar.js.jsonserver",
+  "version": "1.0.0",
+  "description": "Quickest way to create a Web-Service for JSON output, using JSONServer",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server -p 3001 -w db.json"
+  },
+  "author": "Chittaranjan Sardar",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.16.3"
+  }
+}
