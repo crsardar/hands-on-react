@@ -1,5 +1,7 @@
 import { combineReducers } from "redux";
 
+import { reducer as reduxFormReducer } from "redux-form";
+
 import { ACTION_SIGN_IN, ACTION_SIGN_OUT } from "../actions/GooglAuthActions";
 
 const handleAuth = (currentUser = null, action) => {
@@ -16,4 +18,5 @@ const handleAuth = (currentUser = null, action) => {
 
 export default combineReducers({
   currentUser: handleAuth,
+  form: reduxFormReducer,
 });

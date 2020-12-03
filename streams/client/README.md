@@ -40,3 +40,7 @@ Inside index.html
     </head>
 
 Rest in "GoodleAuth.js"
+
+### Redux-Form comes with Redux or React-Redux, No extra installation required.
+
+Ref - https://redux-form.com/8.3.0/docs/gettingstarted.md/
