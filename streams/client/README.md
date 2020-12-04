@@ -1,4 +1,4 @@
-# More on React & Rerux
+# More on React & Redux
 
 1. Navigation with React Router
 2. Handling Authentication with React
