@@ -1,6 +1,10 @@
 import React from "react";
 
-import { reduxForm, Field } from "redux-form";
+import { reduxForm, reset, Field } from "redux-form";
+
+import { connect } from "react-redux";
+
+import { createStremAction } from "../../actions/StreamsActions";
 
 class StreamCreate extends React.Component {
   renderError = ({ error, touched }) => {
@@ -26,8 +30,15 @@ class StreamCreate extends React.Component {
   /* "{...input}" neams - map all matching Key-Values */
 
   onSubmit = (formValues) => {
-    console.log(formValues);
+    this.props.createStrem(formValues);
+
+    /*
+    This will call - onSubmitFail()
+    throw Error("Just a testing");
+    */
+    return "SUCCEED";
   };
+
   render() {
     return (
       <form
@@ -40,7 +51,20 @@ class StreamCreate extends React.Component {
           component={this.renderInput}
           label="Enter Description"
         />
-        <button className="ui button primary">Submit</button>
+        <button
+          className="ui button primary"
+          type="submit"
+          disabled={this.props.pristine || this.props.submitting}
+        >
+          Submit
+        </button>
+        <button
+          className="ui button primary"
+          onClick={this.props.reset}
+          disabled={this.props.pristine || this.props.submitting}
+        >
+          Reset Values
+        </button>
       </form>
     );
   }
@@ -60,6 +84,32 @@ const validateForm = (formValues) => {
   return errors;
 };
 
-export default reduxForm({ form: "Stream-Create", validate: validateForm })(
-  StreamCreate
+const onSubmitSuccess = (result, dispatch) => {
+  dispatch(reset("FormStreamCreate"));
+};
+
+const onSubmitFail = () => {
+  console.log("onSubmitFail");
+};
+
+const createdReduxForm = reduxForm({
+  form: "FormStreamCreate",
+  validate: validateForm,
+  onSubmitSuccess,
+  onSubmitFail,
+})(StreamCreate);
+
+export default connect(null, { createStrem: createStremAction })(
+  createdReduxForm
 );
+
+/*
+Redux-Form only need this, above is a combination of React-Redux and Redux-Form
+
+export default reduxForm({
+  form: "FormStreamCreate",
+  validate: validateForm,
+  onSubmitSuccess,
+  onSubmitFail,
+})(StreamCreate);
+*/

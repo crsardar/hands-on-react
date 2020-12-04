@@ -1,4 +1,4 @@
-# More on React & Derux
+# More on React & Rerux
 
 1. Navigation with React Router
 2. Handling Authentication with React
@@ -44,3 +44,91 @@ Rest in "GoodleAuth.js"
 ### Redux-Form comes with Redux or React-Redux, No extra installation required.
 
 Ref - https://redux-form.com/8.3.0/docs/gettingstarted.md/
+
+### Using axios for making http/s requests
+
+        npm install --save axios
+
+### Using redux-thunk -
+
+        npm install --save redux-thunk
+
+Different ways to write axios codes -
+
+1.  import axios from "axios";
+
+    doSearch(term) {
+
+    axios
+    .get("https://api.unsplash.com/search/photos", {
+    headers: {
+    Authorization:
+    "Client-ID 3aYtL95VY43RtqmodYSnH3UUg5S3Dh-H-CzFr8cbPdU",
+    },
+    params: {
+    query: term,
+    },
+    })
+    .then((result) => {
+    // console.log(result);
+    this.setState({ images: resuls.data.result });
+    })
+    .catch((err) => console.log("Can not fetch images : " + err));
+    }
+
+2.  import axios from "axios";
+
+    async doSearch(term) {
+
+    var result = await axios.get("https://api.unsplash.com/search/photos", {
+    headers: {
+    Authorization: "Client-ID 3aYtL95VY43RtqmodYSnH3UUg5S3Dh-H-CzFr8cbPdU",
+    },
+    params: {
+    query: term,
+    },
+    });
+
+    this.setState({ images: resuls.data.result });
+    }
+
+3.  import axios from "axios";
+
+    doSearch = async (term) => {
+
+    var result = await axios.get("https://api.unsplash.com/search/photos", {
+    headers: {
+    Authorization: "Client-ID 3aYtL95VY43RtqmodYSnH3UUg5S3Dh-H-CzFr8cbPdU",
+    },
+    params: {
+    query: term,
+    },
+    });
+    console.log(result);
+
+    this.setState({ images: resuls.data.result });
+    };
+
+4.  unsplash.js
+
+    import axios from "axios";
+    export default axios.create({
+    headers: {
+    Authorization: "Client-ID 3aYtL95VY43RtqmodYSnH3UUg5S3Dh-H-CzFr8cbPdU",
+    },
+    baseURL: "https://api.unsplash.com",
+    });
+
+    App.js
+
+    import unsplash from "../api/unsplash";
+    doSearch = async (term) => {
+
+    var result = await unsplash.get("/search/photos", {
+    params: {
+    query: term,
+    },
+    });
+    console.log(result);
+    this.setState({ images: resuls.data.result });
+    };

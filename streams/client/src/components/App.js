@@ -3,7 +3,9 @@ import { Provider } from "react-redux";
 
 import { BrowserRouter, Route } from "react-router-dom";
 
-import reducer from "../reducers/Reducers";
+import thunk from "redux-thunk";
+
+import reducer from "../reducers";
 
 import StreamCreate from "./streams/StreamCreate";
 import StreamEdit from "./streams/StreamEdit";
@@ -13,7 +15,7 @@ import StreamShow from "./streams/StreamShow";
 import Header from "./Header";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(reducer, composeEnhancers(applyMiddleware()));
+const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
 
 const App = () => {
   return (
@@ -28,7 +30,7 @@ const App = () => {
             <Route path="/streams/show" exact component={StreamShow} />
             <Route
               path="/streams/delete"
-              exact="true"
+              exact={true}
               component={StreamDelete}
             />
           </div>

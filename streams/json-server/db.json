@@ -1,3 +1,19 @@
 {
-    "streams":[]
+  "stream": [
+    {
+      "title": "React.JS",
+      "description": "Hands On React.JS Web-App Development",
+      "id": 1
+    },
+    {
+      "title": "SpringBoot",
+      "description": "Hands on SpringBoot REST end points creations",
+      "id": 2
+    },
+    {
+      "title": "React Native",
+      "description": "It will be very interesting to learn React Native for developing app for all device",
+      "id": 3
+    }
+  ]
 }
