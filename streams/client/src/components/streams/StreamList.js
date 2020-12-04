@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { getStreamsListAction } from "../../actions/StreamsActions";
+import { actionStreamsList } from "../../actions/StreamsActions";
 
 class StreamList extends React.Component {
   componentDidMount() {
@@ -11,15 +11,22 @@ class StreamList extends React.Component {
   render() {
     const streamsJSX = this.props.streams.map((stream) => {
       return (
-        <div key={stream.id} style={{ marginTop: "10px" }}>
-          <h3>{stream.title}</h3>
-          <p>{stream.description}</p>
-          <hr />
+        <div className="item" key={stream.id}>
+          <i className="large middle aligned icon camera" />
+          <div className="content">
+            {stream.title}
+            <div className="description">{stream.description}</div>
+          </div>
         </div>
       );
     });
 
-    return <div>{streamsJSX}</div>;
+    return (
+      <div>
+        <h2>Streams</h2>
+        <div className="ui celled list">{streamsJSX}</div>
+      </div>
+    );
   }
 }
 
@@ -27,6 +34,6 @@ const mapStateToProps = ({ currentUser, streams }) => {
   return { currentUser, streams };
 };
 
-export default connect(mapStateToProps, { getStreams: getStreamsListAction })(
+export default connect(mapStateToProps, { getStreams: actionStreamsList })(
   StreamList
 );

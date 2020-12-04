@@ -4,7 +4,7 @@ import { reduxForm, reset, Field } from "redux-form";
 
 import { connect } from "react-redux";
 
-import { createStremAction } from "../../actions/StreamsActions";
+import { actionStremCreate } from "../../actions/StreamsActions";
 
 class StreamCreate extends React.Component {
   renderError = ({ error, touched }) => {
@@ -99,7 +99,7 @@ const createdReduxForm = reduxForm({
   onSubmitFail,
 })(StreamCreate);
 
-export default connect(null, { createStrem: createStremAction })(
+export default connect(null, { createStrem: actionStremCreate })(
   createdReduxForm
 );
 

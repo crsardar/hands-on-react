@@ -1,5 +1,5 @@
 {
-  "stream": [
+  "streams": [
     {
       "title": "React.JS",
       "description": "Hands On React.JS Web-App Development",
@@ -14,6 +14,11 @@
       "title": "React Native",
       "description": "It will be very interesting to learn React Native for developing app for all device",
       "id": 3
+    },
+    {
+      "title": "Test Stream Title",
+      "description": "This a test of my Stream App",
+      "id": 4
     }
   ]
 }
