@@ -1,11 +1,13 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
 
-import { BrowserRouter, Route } from "react-router-dom";
+import { Router, Route } from "react-router-dom";
 
 import thunk from "redux-thunk";
 
 import reducer from "../reducers";
+
+import history from "../history";
 
 import StreamCreate from "./streams/StreamCreate";
 import StreamEdit from "./streams/StreamEdit";
@@ -21,20 +23,20 @@ const App = () => {
   return (
     <Provider store={store}>
       <div className="ui container">
-        <BrowserRouter>
+        <Router history={history}>
           <Header />
           <div style={{ marginTop: "10px" }}>
             <Route path="/" exact component={StreamList} />
             <Route path="/streams/new" exact component={StreamCreate} />
-            <Route path="/streams/edit" exact component={StreamEdit} />
-            <Route path="/streams/show" exact component={StreamShow} />
+            <Route path="/streams/edit/:id" exact component={StreamEdit} />
+            <Route path="/streams/show/:id" exact component={StreamShow} />
             <Route
-              path="/streams/delete"
+              path="/streams/delete/:id"
               exact={true}
               component={StreamDelete}
             />
           </div>
-        </BrowserRouter>
+        </Router>
       </div>
     </Provider>
   );

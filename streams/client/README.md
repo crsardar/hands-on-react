@@ -12,9 +12,11 @@
 
         npm install --save redux react-redux
 
-### Redux Form
+### Redux-Form
 
     npm install --save redux-form
+
+    Ref - https://redux-form.com/8.3.0/docs/gettingstarted.md/
 
 ### Using semantic-ui for ready made styles
 
@@ -40,10 +42,6 @@ Inside index.html
     </head>
 
 Rest in "GoodleAuth.js"
-
-### Redux-Form comes with Redux or React-Redux, No extra installation required.
-
-Ref - https://redux-form.com/8.3.0/docs/gettingstarted.md/
 
 ### Using axios for making http/s requests
 

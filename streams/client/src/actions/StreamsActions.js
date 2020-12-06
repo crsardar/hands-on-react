@@ -8,7 +8,8 @@ export const STREAM_GET_LIST = "STREAM_GET_LIST";
 
 export const actionStremCreate = (values) => {
   const create = async (dispatch, getStore) => {
-    const response = await streams.post("/streams", values);
+    const userId = getStore().currentUser.userId;
+    const response = await streams.post("/streams", { ...values, userId });
     dispatch({ type: STREAM_CREATE, payload: response.data });
   };
 
@@ -27,12 +28,12 @@ export const actionStreamDetails = (id) => {
 
 export const actionStreamsList = () => async (dispatch) => {
   const response = await streams.get("/streams");
-  console.log(response);
+
   dispatch({ type: STREAM_GET_LIST, payload: response.data });
 };
 
 export const actionStreamEdit = (id, values) => async (dispatch) => {
-  const response = await streams.put(`/streams/${id}`, values);
+  const response = await streams.patch(`/streams/${id}`, values);
 
   dispatch({ type: STREAM_EDIT, payload: response.data });
 };
