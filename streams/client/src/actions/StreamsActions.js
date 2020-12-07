@@ -8,8 +8,11 @@ export const STREAM_GET_LIST = "STREAM_GET_LIST";
 
 export const actionStremCreate = (values) => {
   const create = async (dispatch, getStore) => {
-    const userId = getStore().currentUser.userId;
-    const response = await streams.post("/streams", { ...values, userId });
+    if (getStore().currentUser) {
+      const userId = getStore().currentUser.userId;
+      values = { ...values, userId };
+    }
+    const response = await streams.post("/streams", values);
     dispatch({ type: STREAM_CREATE, payload: response.data });
   };
 

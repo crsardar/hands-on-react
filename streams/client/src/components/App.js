@@ -1,11 +1,4 @@
-import { createStore, applyMiddleware, compose } from "redux";
-import { Provider } from "react-redux";
-
 import { Router, Route } from "react-router-dom";
-
-import thunk from "redux-thunk";
-
-import reducer from "../reducers";
 
 import history from "../history";
 
@@ -15,31 +8,33 @@ import StreamDelete from "./streams/StreamDelete";
 import StreamList from "./streams/StreamList";
 import StreamShow from "./streams/StreamShow";
 import Header from "./Header";
-
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
+import { connect } from "react-redux";
 
 const App = () => {
   return (
-    <Provider store={store}>
-      <div className="ui container">
-        <Router history={history}>
-          <Header />
-          <div style={{ marginTop: "10px" }}>
-            <Route path="/" exact component={StreamList} />
-            <Route path="/streams/new" exact component={StreamCreate} />
-            <Route path="/streams/edit/:id" exact component={StreamEdit} />
-            <Route path="/streams/show/:id" exact component={StreamShow} />
-            <Route
-              path="/streams/delete/:id"
-              exact={true}
-              component={StreamDelete}
-            />
-          </div>
-        </Router>
-      </div>
-    </Provider>
+    <div className="ui container">
+      <Router history={history}>
+        <Header />
+        <div style={{ marginTop: "10px" }}>
+          <Route path="/" exact component={StreamList} />
+          <Route path="/streams/new" exact component={StreamCreate} />
+          <Route path="/streams/edit/:id" exact component={StreamEdit} />
+          <Route path="/streams/show/:id" exact component={StreamShow} />
+          <Route
+            path="/streams/delete/:id"
+            exact={true}
+            component={StreamDelete}
+          />
+        </div>
+      </Router>
+    </div>
   );
 };
 
-export default App;
+const mapStateToProps = (state) => {
+  // This is just to make sure -
+  // Everything is re-rendered when 'currentUser' changes.
+  return { currentUser: state.currentUser };
+};
+
+export default connect(mapStateToProps)(App);
