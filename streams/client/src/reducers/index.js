@@ -8,6 +8,6 @@ import streamReducer from "./StreamsReducer";
 
 export default combineReducers({
   currentUser: authReducer,
-  streams: streamReducer,
+  streamData: streamReducer,
   form: reduxFormReducer,
 });

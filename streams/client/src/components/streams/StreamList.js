@@ -31,7 +31,7 @@ class StreamList extends React.Component {
     }
   }
 
-  render() {
+  getStreamsJSX() {
     const streamsJSX = this.props.streams.map((stream) => {
       return (
         <div className="item" key={stream.id}>
@@ -44,11 +44,14 @@ class StreamList extends React.Component {
         </div>
       );
     });
+    return streamsJSX;
+  }
 
+  render() {
     return (
       <div>
         <h2>Streams</h2>
-        <div className="ui celled list">{streamsJSX}</div>
+        <div className="ui celled list">{this.getStreamsJSX()}</div>
         <div style={{ textAlign: "right" }}>
           <Link to="/streams/new" className="ui button primary">
             Create Stream
@@ -59,8 +62,11 @@ class StreamList extends React.Component {
   }
 }
 
-const mapStateToProps = ({ currentUser, streams }) => {
-  return { currentUser, streams };
+const mapStateToProps = ({ currentUser, streamData }) => {
+  return {
+    currentUser,
+    streams: streamData.streams != null ? [...streamData.streams] : [],
+  };
 };
 
 export default connect(mapStateToProps, { getStreams: actionStreamsList })(

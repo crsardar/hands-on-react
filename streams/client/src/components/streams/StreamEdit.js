@@ -52,9 +52,11 @@ class StreamEdit extends React.Component {
     );
   }
 }
-const mapStateToProps = ({ streams }) => {
+const mapStateToProps = ({ streamData }) => {
   const currentStream =
-    streams != null && streams.length > 0 ? streams[0] : null;
+    streamData != null && streamData.streams && streamData.streams.length > 0
+      ? streamData.streams[0]
+      : null;
 
   return {
     currentStream,

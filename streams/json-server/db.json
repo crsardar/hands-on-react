@@ -22,6 +22,12 @@
       "title": "Stream Without A User",
       "description": "This is a test to create a Stream without a User",
       "id": 4
+    },
+    {
+      "title": "Matering MacOS",
+      "description": "Operation on MacOS is not as easy as Windows",
+      "userId": "112630556313245264615",
+      "id": 5
     }
   ]
 }

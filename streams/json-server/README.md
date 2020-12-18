@@ -21,3 +21,10 @@
     npm start
 
 The Web-Service will be available at port 3001
+
+### On a Completely New environment(like checked in from Git repo) -
+1.
+        npm install
+
+2.
+        npm start
