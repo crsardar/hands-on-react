@@ -1,4 +1,10 @@
-### Understanding State, Components copositions and Component's Life Cycles
+### Contents - 
+1. Class Based Components
+2. State of Components
+3. Finding location of the user
+4. Component's Life Cycles
+5. Components compositions 
+
 
 ### Using semantic-ui for ready made styles
 

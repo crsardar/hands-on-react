@@ -1,3 +1,7 @@
+#Contents -
+1. Intro to Componets.
+2. Intro Property system of compomnent.
+
 ### Using semantic-ui for ready made styles
 
 Inside index.html
