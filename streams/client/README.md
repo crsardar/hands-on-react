@@ -8,13 +8,13 @@
 
         npm install --save react-router-dom
 
-### React needs "React-Redux" library to make "Redux" working with it.
+### React-Form needs "React-Redux" library to make "Redux" working with it.
 
         npm install --save redux react-redux
 
 ### Redux-Form
 
-    npm install --save redux-form
+        npm install --save redux-form
 
     Ref - https://redux-form.com/8.3.0/docs/gettingstarted.md/
 
