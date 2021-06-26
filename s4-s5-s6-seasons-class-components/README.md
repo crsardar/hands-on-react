@@ -1,9 +1,10 @@
 ### Contents - 
 1. Class Based Components
 2. State of Components
-3. Finding location of the user
+3. Finding Location of the user
 4. Component's Life Cycles
 5. Components compositions 
+6. How to declare defaultProps
 
 
 ### Using semantic-ui for ready made styles

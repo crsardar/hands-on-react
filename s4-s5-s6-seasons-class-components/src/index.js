@@ -16,7 +16,8 @@ class App extends React.Component {
    class App extends React.Component {
     ...
 
-      state = { lat: null, errorMessage: '' };
+    state = { lat: null, errorMessage: '' };
+    // Yes, "this." is NOT required here
 
     ...
    }
