@@ -4,7 +4,7 @@
 3. Finding Location of the user
 4. Component's Life Cycles
 5. Components compositions 
-6. How to declare defaultProps
+6. How to declare defaultProps (in Spinner.js)
 
 
 ### Using semantic-ui for ready made styles
