@@ -1,4 +1,6 @@
-## Handling User Input with Forms and Events
+## Contents : 
+  1. Handling User Input with Forms and Events
+  2.
 
 ### Using semantic-ui for ready made styles
 
