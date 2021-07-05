@@ -1,6 +1,13 @@
 ## Contents : 
   1. Handling User Input with Forms and Events
-  2.
+  2. Child component to parent component communication.
+  3. REST call using Axios
+  4. HTML/CSS Grid View
+  5. React 'ref' for DOM element(React reference)
+
+
+
+
 
 ### Using semantic-ui for ready made styles
 
@@ -18,6 +25,9 @@ Inside index.html
 ### Using axios for making http/s requests
     
         npm install --save axios
+
+
+
 
 Different ways to write axios codes -
 1.
