@@ -1,4 +1,13 @@
-### Understanding React's Hooking (Using features of React.Components without subclassing it, using 'functions')
+
+### Contents 
+1. Hook System
+2. Tab Navigation
+3. Open in new Tab i.e Ctl/Cmd + Click event handling
+4. Times - setTimeout(), clearTimeOut()
+5. dangerouslySetInnerHTML - 
+
+
+Understanding React's Hooking (Using features of React.Components without subclassing it, using 'functions')
 
 ### Using semantic-ui for ready made styles
 

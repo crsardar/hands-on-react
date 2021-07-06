@@ -29,7 +29,11 @@ const mapStateToProps = (state) => {
   return { songs: state.songList };
 };
 
-export default connect(mapStateToProps, { selectSong: getSongSelectionAction })(
+export default connect(mapStateToProps, 
+  // selectSong - name of the property(inside React component) which will have a refence of bonded function 
+  // for 'action creator function'
+  // getSongSelectionAction - 'action creator function'
+  { selectSong: getSongSelectionAction })(
   SongsList
 );
 

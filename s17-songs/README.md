@@ -1,4 +1,6 @@
-### Hands On Redux with React (Hello world in Redux, with React).
+### Conetnts 
+1. Intro to redux, react-redux
+
 
 React needs "React-Redux" library to make "Redux" working with it.
 
