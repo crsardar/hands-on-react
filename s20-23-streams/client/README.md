@@ -1,8 +1,11 @@
 # More on React & Redux
 
-1. Navigation with React Router
-2. Handling Authentication with React
-3. Handling Forms with Redux Form
+1. Redux Form
+2. Redux Form Validation 
+3. Navigation with React Router
+4. Handling Authentication with React
+5. Redux-Dev-Tool usages
+6. Other Minor - autoComplete, touched
 
 ## React Routers
 

@@ -1,4 +1,6 @@
-### Hands On : Async Actions with Redux-Thunk
+### Conents : 
+1. Async Actions with Redux-Thunk
+2. applyMiddleware - redux example
 
 ### Dependencies -
 

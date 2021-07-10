@@ -72,7 +72,7 @@ const validateForm = (formValues) => {
   const errors = {};
 
   if (!formValues.title) {
-    errors.title = "You must enter a title";
+    errors.title = "You must enter a title"; // Key (here error.title) bust have the same name as form value (here formValues.title) i.e 'name' of the Fiel
   }
 
   if (!formValues.description) {

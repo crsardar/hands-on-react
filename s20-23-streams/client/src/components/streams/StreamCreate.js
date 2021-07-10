@@ -9,9 +9,11 @@ import Stream from "./Stream";
 import history from "../../history";
 
 class StreamCreate extends React.Component {
+
   onSubmit = (formValues) => {
     this.props.createStrem(formValues);
   };
+  
   onSucceed = () => {
     history.push("/");
   };
